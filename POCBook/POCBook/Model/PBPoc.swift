@@ -10,10 +10,10 @@ import Foundation
 
 class PBPoc {
     var pocName : String
-    var controllerName : String
+    var storyboardName : String
 
-    init( pocName: String, controllerName : String) {
+    init( pocName: String, storyboardName : String) {
         self.pocName = pocName
-        self.controllerName = controllerName
+        self.storyboardName = storyboardName
     }
 }

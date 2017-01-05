@@ -6,9 +6,9 @@
 	<array>
 		<dict>
 			<key>POC_NAME</key>
-			<string>GitHub Issues</string>
-			<key>POC_CONTROLLER</key>
-			<string>PBGitIssuesListViewController</string>
+			<string>GIT Hub Issues</string>
+			<key>POC_STORYBOARD</key>
+			<string>GITHUB_ISSUES</string>
 		</dict>
 	</array>
 </dict>

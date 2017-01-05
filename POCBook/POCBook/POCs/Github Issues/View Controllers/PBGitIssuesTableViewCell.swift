@@ -1,15 +1,19 @@
 //
-//  PBPocListTableViewCell.swift
+//  PBGitIssuesTableViewCell.swift
 //  POCBook
 //
-//  Created by rahul mahajan on 23/12/16.
-//  Copyright © 2016 rahul mahajan. All rights reserved.
+//  Created by rahul mahajan on 05/01/17.
+//  Copyright © 2017 rahul mahajan. All rights reserved.
 //
 
 import UIKit
 
-class PBPocListTableViewCell: UITableViewCell {
+class PBGitIssuesTableViewCell: UITableViewCell {
 
+    //MARK:- IB Outlets
+    @IBOutlet weak var issueNameLbl: UILabel!
+    @IBOutlet weak var issueDescLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

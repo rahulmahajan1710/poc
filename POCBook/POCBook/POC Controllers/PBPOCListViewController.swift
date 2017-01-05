@@ -9,7 +9,12 @@
 import UIKit
 
 class PBPOCListViewController: PBViewController,UITableViewDataSource,UITableViewDelegate {
+    
+    //MARK: - IB Outlets
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    //MARK: - ViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         weak var weakSelf = self
@@ -30,6 +35,17 @@ class PBPOCListViewController: PBViewController,UITableViewDataSource,UITableVie
         // Dispose of any resources that can be recreated.
     }
     
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+    //MARK: - UITableViewDataSource & UITableViewDelegate Methods
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -40,23 +56,20 @@ class PBPOCListViewController: PBViewController,UITableViewDataSource,UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell =  tableView.dequeueReusableCell(withIdentifier: "PBPocListTableViewCell") as? PBPocListTableViewCell
+        var cell =  tableView.dequeueReusableCell(withIdentifier: "PBPOCListTableViewCell") as? PBPOCListTableViewCell
         if cell == nil {
-            cell = PBPocListTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "PBPocListTableViewCell")
+            cell = PBPOCListTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "PBPOCListTableViewCell")
         }
         let poc = PBSingleton.sharedInstance.pocList[indexPath.row]
         cell!.textLabel!.text = poc.pocName
         return cell!
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let poc = PBSingleton.sharedInstance.pocList[indexPath.row]
+        self.navigationController?.pushViewController(PBUtility.viewController(VCIdentifier: nil, SBIdentifier: poc.storyboardName), animated: true)
     }
-    */
+    
+   
 
 }

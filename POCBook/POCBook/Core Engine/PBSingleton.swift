@@ -16,10 +16,11 @@ class PBSingleton {
     init() {
         pocList = []
     }
+    
+    
+    //MARK: - Web Call & Data Reading Methods
 
     func readPOCFromPlist(plistName : String , completion: (_ result : Bool , _ info : Dictionary<String, Any>?) -> Void ){
-        
-        
         if let path = Bundle.main.path(forResource: plistName , ofType: "plist") {
             if let dict = NSDictionary(contentsOfFile: path) as? [String: Any] {
                 var tempPOC : Array<PBPoc> = []
@@ -28,7 +29,7 @@ class PBSingleton {
                     let pocs = dict[PBConstants.KeyConstants.pocListName] as! Array<Any>
                     for poc in pocs {
                         let pocDict = poc as! Dictionary<String,String>
-                        let pocObj = PBPoc(pocName: pocDict[PBConstants.KeyConstants.pocName]!, controllerName: pocDict[PBConstants.KeyConstants.pocController]!)
+                        let pocObj = PBPoc(pocName: pocDict[PBConstants.KeyConstants.pocName]!, storyboardName: pocDict[PBConstants.KeyConstants.pocStoryboard]!)
                         tempPOC.append(pocObj)
                     }
                     
@@ -44,32 +45,9 @@ class PBSingleton {
                 }
             }
         }
-        
-//        var tempPOC : Array<PBPoc> = []
-//        var res  = PBConstants.KeyConstants.success
-//        do {
-//            let data = try Data(contentsOf: URL(string : plistPath!)!)
-//            
-//            let pocInfo = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String : Any]
-//        
-//            let pocs = pocInfo[PBConstants.KeyConstants.pocListName] as! Array<Any>
-//            for poc in pocs {
-//                let pocDict = poc as! Dictionary<String,String>
-//                let pocObj = PBPoc(pocName: pocDict[PBConstants.KeyConstants.pocName]!, controllerName: pocDict[PBConstants.KeyConstants.pocController]!)
-//                tempPOC.append(pocObj)
-//            }
-//            
-//            if tempPOC.count>0 {
-//                pocList = tempPOC
-//            }
-//            completion(res, nil)
-//            
-//        } catch {
-//            res = PBConstants.KeyConstants.failure
-//            print("Handle \(error) here")
-//            completion(res,[PBConstants.KeyConstants.status:error])
-//        }
-        
     }
+    
+    
+    
     
 }

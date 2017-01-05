@@ -16,12 +16,19 @@
 		7924EEA41E0D35B3009CBB85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7924EEA11E0D35B3009CBB85 /* Main.storyboard */; };
 		7924EEAB1E0D3775009CBB85 /* PBSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924EEAA1E0D3775009CBB85 /* PBSingleton.swift */; };
 		7924EEAD1E0D3864009CBB85 /* PBPocInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7924EEAC1E0D3864009CBB85 /* PBPocInfo.plist */; };
-		7924EEB11E0D3C47009CBB85 /* PBGitIssuesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924EEB01E0D3C47009CBB85 /* PBGitIssuesListViewController.swift */; };
 		7924EEB51E0D3C98009CBB85 /* PBNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924EEB21E0D3C98009CBB85 /* PBNavController.swift */; };
 		7924EEB61E0D3C98009CBB85 /* PBPOCListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924EEB31E0D3C98009CBB85 /* PBPOCListViewController.swift */; };
 		7924EEB71E0D3C98009CBB85 /* PBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924EEB41E0D3C98009CBB85 /* PBViewController.swift */; };
-		7924EEBB1E0D3DA6009CBB85 /* PBPocListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924EEBA1E0D3DA6009CBB85 /* PBPocListTableViewCell.swift */; };
+		7924EEBB1E0D3DA6009CBB85 /* PBPOCListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924EEBA1E0D3DA6009CBB85 /* PBPOCListTableViewCell.swift */; };
 		7924EEBE1E0D3F5A009CBB85 /* PBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924EEBD1E0D3F5A009CBB85 /* PBConstants.swift */; };
+		796038671E1E32CA00D34CF7 /* PBUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796038661E1E32CA00D34CF7 /* PBUtility.swift */; };
+		796038751E1E5C6100D34CF7 /* GITHUB_ISSUES.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796038701E1E5C6100D34CF7 /* GITHUB_ISSUES.storyboard */; };
+		796038761E1E5C6100D34CF7 /* GITHUB_ISSUES.txt in Resources */ = {isa = PBXBuildFile; fileRef = 796038711E1E5C6100D34CF7 /* GITHUB_ISSUES.txt */; };
+		7960387C1E1E5CAE00D34CF7 /* PBGitIssuesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960387B1E1E5CAE00D34CF7 /* PBGitIssuesListViewController.swift */; };
+		7960387E1E1E5DD400D34CF7 /* PBGitIssuesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960387D1E1E5DD400D34CF7 /* PBGitIssuesTableViewCell.swift */; };
+		796038811E1E6E2C00D34CF7 /* PBGitIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796038801E1E6E2C00D34CF7 /* PBGitIssue.swift */; };
+		796038831E1E747700D34CF7 /* PBGitIssueComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796038821E1E747700D34CF7 /* PBGitIssueComment.swift */; };
+		796038851E1E78BB00D34CF7 /* PBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796038841E1E78BB00D34CF7 /* PBNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,12 +64,19 @@
 		7924EEA21E0D35B3009CBB85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7924EEAA1E0D3775009CBB85 /* PBSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBSingleton.swift; sourceTree = "<group>"; };
 		7924EEAC1E0D3864009CBB85 /* PBPocInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PBPocInfo.plist; sourceTree = "<group>"; };
-		7924EEB01E0D3C47009CBB85 /* PBGitIssuesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBGitIssuesListViewController.swift; sourceTree = "<group>"; };
 		7924EEB21E0D3C98009CBB85 /* PBNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBNavController.swift; sourceTree = "<group>"; };
 		7924EEB31E0D3C98009CBB85 /* PBPOCListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBPOCListViewController.swift; sourceTree = "<group>"; };
 		7924EEB41E0D3C98009CBB85 /* PBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBViewController.swift; sourceTree = "<group>"; };
-		7924EEBA1E0D3DA6009CBB85 /* PBPocListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBPocListTableViewCell.swift; sourceTree = "<group>"; };
+		7924EEBA1E0D3DA6009CBB85 /* PBPOCListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBPOCListTableViewCell.swift; sourceTree = "<group>"; };
 		7924EEBD1E0D3F5A009CBB85 /* PBConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBConstants.swift; sourceTree = "<group>"; };
+		796038661E1E32CA00D34CF7 /* PBUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBUtility.swift; sourceTree = "<group>"; };
+		796038701E1E5C6100D34CF7 /* GITHUB_ISSUES.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GITHUB_ISSUES.storyboard; sourceTree = "<group>"; };
+		796038711E1E5C6100D34CF7 /* GITHUB_ISSUES.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GITHUB_ISSUES.txt; sourceTree = "<group>"; };
+		7960387B1E1E5CAE00D34CF7 /* PBGitIssuesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBGitIssuesListViewController.swift; sourceTree = "<group>"; };
+		7960387D1E1E5DD400D34CF7 /* PBGitIssuesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBGitIssuesTableViewCell.swift; sourceTree = "<group>"; };
+		796038801E1E6E2C00D34CF7 /* PBGitIssue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBGitIssue.swift; sourceTree = "<group>"; };
+		796038821E1E747700D34CF7 /* PBGitIssueComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBGitIssueComment.swift; sourceTree = "<group>"; };
+		796038841E1E78BB00D34CF7 /* PBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				7924EE961E0D34F2009CBB85 /* PBAppDelegate.swift */,
+				7960387F1E1E635C00D34CF7 /* Networking */,
+				7960386E1E1E5C4800D34CF7 /* POCs */,
 				7924EEBC1E0D3EFF009CBB85 /* Common */,
 				7924EEAE1E0D38E2009CBB85 /* POC Controllers */,
 				7924EEA91E0D36A8009CBB85 /* Core Engine */,
@@ -167,26 +183,63 @@
 				7924EEB21E0D3C98009CBB85 /* PBNavController.swift */,
 				7924EEB41E0D3C98009CBB85 /* PBViewController.swift */,
 				7924EEB31E0D3C98009CBB85 /* PBPOCListViewController.swift */,
-				7924EEBA1E0D3DA6009CBB85 /* PBPocListTableViewCell.swift */,
-				7924EEAF1E0D3C2D009CBB85 /* Github Issues */,
+				7924EEBA1E0D3DA6009CBB85 /* PBPOCListTableViewCell.swift */,
 			);
 			path = "POC Controllers";
-			sourceTree = "<group>";
-		};
-		7924EEAF1E0D3C2D009CBB85 /* Github Issues */ = {
-			isa = PBXGroup;
-			children = (
-				7924EEB01E0D3C47009CBB85 /* PBGitIssuesListViewController.swift */,
-			);
-			path = "Github Issues";
 			sourceTree = "<group>";
 		};
 		7924EEBC1E0D3EFF009CBB85 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				7924EEBD1E0D3F5A009CBB85 /* PBConstants.swift */,
+				796038661E1E32CA00D34CF7 /* PBUtility.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		7960386E1E1E5C4800D34CF7 /* POCs */ = {
+			isa = PBXGroup;
+			children = (
+				7960386F1E1E5C6100D34CF7 /* Github Issues */,
+			);
+			path = POCs;
+			sourceTree = "<group>";
+		};
+		7960386F1E1E5C6100D34CF7 /* Github Issues */ = {
+			isa = PBXGroup;
+			children = (
+				796038701E1E5C6100D34CF7 /* GITHUB_ISSUES.storyboard */,
+				796038711E1E5C6100D34CF7 /* GITHUB_ISSUES.txt */,
+				7960387A1E1E5CAE00D34CF7 /* View Controllers */,
+				796038721E1E5C6100D34CF7 /* Model */,
+			);
+			path = "Github Issues";
+			sourceTree = "<group>";
+		};
+		796038721E1E5C6100D34CF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				796038801E1E6E2C00D34CF7 /* PBGitIssue.swift */,
+				796038821E1E747700D34CF7 /* PBGitIssueComment.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7960387A1E1E5CAE00D34CF7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7960387B1E1E5CAE00D34CF7 /* PBGitIssuesListViewController.swift */,
+				7960387D1E1E5DD400D34CF7 /* PBGitIssuesTableViewCell.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7960387F1E1E635C00D34CF7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				796038841E1E78BB00D34CF7 /* PBNetworkManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +353,8 @@
 				7924EEAD1E0D3864009CBB85 /* PBPocInfo.plist in Resources */,
 				7924EE6E1E0D2B06009CBB85 /* Assets.xcassets in Resources */,
 				7924EEA31E0D35B3009CBB85 /* LaunchScreen.storyboard in Resources */,
+				796038751E1E5C6100D34CF7 /* GITHUB_ISSUES.storyboard in Resources */,
+				796038761E1E5C6100D34CF7 /* GITHUB_ISSUES.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,12 +381,17 @@
 			files = (
 				7924EE971E0D34F2009CBB85 /* PBAppDelegate.swift in Sources */,
 				7924EEB71E0D3C98009CBB85 /* PBViewController.swift in Sources */,
-				7924EEBB1E0D3DA6009CBB85 /* PBPocListTableViewCell.swift in Sources */,
+				796038851E1E78BB00D34CF7 /* PBNetworkManager.swift in Sources */,
+				796038811E1E6E2C00D34CF7 /* PBGitIssue.swift in Sources */,
+				7960387E1E1E5DD400D34CF7 /* PBGitIssuesTableViewCell.swift in Sources */,
+				7924EEBB1E0D3DA6009CBB85 /* PBPOCListTableViewCell.swift in Sources */,
+				7960387C1E1E5CAE00D34CF7 /* PBGitIssuesListViewController.swift in Sources */,
 				7924EE9E1E0D357E009CBB85 /* PBPoc.swift in Sources */,
 				7924EEBE1E0D3F5A009CBB85 /* PBConstants.swift in Sources */,
-				7924EEB11E0D3C47009CBB85 /* PBGitIssuesListViewController.swift in Sources */,
 				7924EEB51E0D3C98009CBB85 /* PBNavController.swift in Sources */,
 				7924EEAB1E0D3775009CBB85 /* PBSingleton.swift in Sources */,
+				796038671E1E32CA00D34CF7 /* PBUtility.swift in Sources */,
+				796038831E1E747700D34CF7 /* PBGitIssueComment.swift in Sources */,
 				7924EEB61E0D3C98009CBB85 /* PBPOCListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

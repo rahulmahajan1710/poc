@@ -22,7 +22,7 @@ struct PBConstants {
         static let failure                          =  false
         static let pocListName                      = "POC_LIST"
         static let pocName                          = "POC_NAME"
-        static let pocController                    = "POC_CONTROLLER"
+        static let pocStoryboard                    = "POC_STORYBOARD"
     }
     
     struct Colors {
@@ -35,7 +35,21 @@ struct PBConstants {
         static func colorWith(red : CGFloat , green : CGFloat , blue : CGFloat , alpha : CGFloat) -> UIColor{
             return UIColor( red: (red/255.0), green: (green/255.0), blue: (blue/255.0), alpha: alpha)
         }
-        
     }
     
+    struct GITIssues {
+        static let commentsURL                      = "comments_url"
+        static let title                            = "title"
+        static let body                             = "body"
+        static let updatedAt                        = "updated_at"
+        static let dateFormat                       = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        static let userName                         = "user"
+        static let login                            = "login"
+    }
 }
+
+enum HTTPMethod : String {
+    case POST = "POST"
+    case GET  = "GET"
+}
+

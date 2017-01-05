@@ -1,0 +1,30 @@
+Question
+
+Step 1:Display list of issues
+
+*Use the GitHub web API to retrieve all open issues associated with the * Display a list of issues to the user
+* Order by most­recently updated issue first
+
+
+
+Step 2: Issue Titles , Issue Body and Comments
+
+Crashlytics repository(check hint for url).
+ *Issue titles and first 140 characters of the issue body should be shown in the list
+*Allow the user to tap an issue to display next screen (detail screen) containing all comments for that issue.
+*All the comments should be shown on the detail screen.The complete comment body and user name of each comment author should be shown on this screen.
+
+
+Step 3:Caching Data
+*Implement persistent storage in the application for caching data so that the issues are only fetched oncein 24 hours. The persistent storage should only contain the current data and old data should be discarded.
+
+
+
+Hints:
+*Documentation for the GitHub issues API can be found here:http://developer.github.com/v3/issues (http://developer.github.com/v3/issues)
+
+*The URL to fetch issues associated with the Crashlytics repository can be found here: https://api.github.com/repos/crashlytics/secureudid/issues (https://api.github.com/repos/crashlytics/secureudid/issues) *Follow Apple HIG design guidelines and feel free to take inspiration from any of the popular apps’ UI/UX in the app store.
+
+*Try to handle no network scenarios ­ you may give option to retry when the request fails due to no network.
+
+*Build modularisation in your code: Keep business logic (network calls, parsing) code separate than the UI code. This would help to use the same business logic code when the UI has to be changed
