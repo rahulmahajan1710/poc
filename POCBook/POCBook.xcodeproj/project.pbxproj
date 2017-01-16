@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		790708571E24F9EF00EF4279 /* PBWebServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790708561E24F9EF00EF4279 /* PBWebServiceHelper.swift */; };
+		79225D7B1E2CDDB000A70730 /* PBGitIssuesCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79225D7A1E2CDDB000A70730 /* PBGitIssuesCommentsViewController.swift */; };
+		79225D7D1E2CDDD100A70730 /* PBGitIssuesCommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79225D7C1E2CDDD100A70730 /* PBGitIssuesCommentsTableViewCell.swift */; };
 		7924EE6E1E0D2B06009CBB85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7924EE6D1E0D2B06009CBB85 /* Assets.xcassets */; };
 		7924EE7C1E0D2B06009CBB85 /* POCBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924EE7B1E0D2B06009CBB85 /* POCBookTests.swift */; };
 		7924EE871E0D2B06009CBB85 /* POCBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924EE861E0D2B06009CBB85 /* POCBookUITests.swift */; };
@@ -29,6 +32,9 @@
 		796038811E1E6E2C00D34CF7 /* PBGitIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796038801E1E6E2C00D34CF7 /* PBGitIssue.swift */; };
 		796038831E1E747700D34CF7 /* PBGitIssueComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796038821E1E747700D34CF7 /* PBGitIssueComment.swift */; };
 		796038851E1E78BB00D34CF7 /* PBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796038841E1E78BB00D34CF7 /* PBNetworkManager.swift */; };
+		796038871E1F7EC000D34CF7 /* PBNWRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796038861E1F7EC000D34CF7 /* PBNWRequest.swift */; };
+		796038891E1F807A00D34CF7 /* PBNWResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796038881E1F807A00D34CF7 /* PBNWResponse.swift */; };
+		7968C8F31E2624990019B13B /* PBPOCInformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968C8F21E2624990019B13B /* PBPOCInformable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		790708561E24F9EF00EF4279 /* PBWebServiceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBWebServiceHelper.swift; sourceTree = "<group>"; };
+		79225D7A1E2CDDB000A70730 /* PBGitIssuesCommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBGitIssuesCommentsViewController.swift; sourceTree = "<group>"; };
+		79225D7C1E2CDDD100A70730 /* PBGitIssuesCommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBGitIssuesCommentsTableViewCell.swift; sourceTree = "<group>"; };
 		7924EE631E0D2B05009CBB85 /* POCBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POCBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7924EE6D1E0D2B06009CBB85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7924EE721E0D2B06009CBB85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +86,9 @@
 		796038801E1E6E2C00D34CF7 /* PBGitIssue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBGitIssue.swift; sourceTree = "<group>"; };
 		796038821E1E747700D34CF7 /* PBGitIssueComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBGitIssueComment.swift; sourceTree = "<group>"; };
 		796038841E1E78BB00D34CF7 /* PBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBNetworkManager.swift; sourceTree = "<group>"; };
+		796038861E1F7EC000D34CF7 /* PBNWRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBNWRequest.swift; sourceTree = "<group>"; };
+		796038881E1F807A00D34CF7 /* PBNWResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBNWResponse.swift; sourceTree = "<group>"; };
+		7968C8F21E2624990019B13B /* PBPOCInformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBPOCInformable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				7924EE961E0D34F2009CBB85 /* PBAppDelegate.swift */,
+				7968C8F11E2624730019B13B /* Protocols */,
 				7960387F1E1E635C00D34CF7 /* Networking */,
 				7960386E1E1E5C4800D34CF7 /* POCs */,
 				7924EEBC1E0D3EFF009CBB85 /* Common */,
@@ -173,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				7924EEAA1E0D3775009CBB85 /* PBSingleton.swift */,
+				790708561E24F9EF00EF4279 /* PBWebServiceHelper.swift */,
 			);
 			path = "Core Engine";
 			sourceTree = "<group>";
@@ -230,6 +244,8 @@
 			children = (
 				7960387B1E1E5CAE00D34CF7 /* PBGitIssuesListViewController.swift */,
 				7960387D1E1E5DD400D34CF7 /* PBGitIssuesTableViewCell.swift */,
+				79225D7A1E2CDDB000A70730 /* PBGitIssuesCommentsViewController.swift */,
+				79225D7C1E2CDDD100A70730 /* PBGitIssuesCommentsTableViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -238,8 +254,18 @@
 			isa = PBXGroup;
 			children = (
 				796038841E1E78BB00D34CF7 /* PBNetworkManager.swift */,
+				796038861E1F7EC000D34CF7 /* PBNWRequest.swift */,
+				796038881E1F807A00D34CF7 /* PBNWResponse.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		7968C8F11E2624730019B13B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7968C8F21E2624990019B13B /* PBPOCInformable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,16 +407,22 @@
 			files = (
 				7924EE971E0D34F2009CBB85 /* PBAppDelegate.swift in Sources */,
 				7924EEB71E0D3C98009CBB85 /* PBViewController.swift in Sources */,
+				79225D7B1E2CDDB000A70730 /* PBGitIssuesCommentsViewController.swift in Sources */,
 				796038851E1E78BB00D34CF7 /* PBNetworkManager.swift in Sources */,
+				796038891E1F807A00D34CF7 /* PBNWResponse.swift in Sources */,
 				796038811E1E6E2C00D34CF7 /* PBGitIssue.swift in Sources */,
+				7968C8F31E2624990019B13B /* PBPOCInformable.swift in Sources */,
 				7960387E1E1E5DD400D34CF7 /* PBGitIssuesTableViewCell.swift in Sources */,
+				79225D7D1E2CDDD100A70730 /* PBGitIssuesCommentsTableViewCell.swift in Sources */,
 				7924EEBB1E0D3DA6009CBB85 /* PBPOCListTableViewCell.swift in Sources */,
 				7960387C1E1E5CAE00D34CF7 /* PBGitIssuesListViewController.swift in Sources */,
 				7924EE9E1E0D357E009CBB85 /* PBPoc.swift in Sources */,
 				7924EEBE1E0D3F5A009CBB85 /* PBConstants.swift in Sources */,
+				790708571E24F9EF00EF4279 /* PBWebServiceHelper.swift in Sources */,
 				7924EEB51E0D3C98009CBB85 /* PBNavController.swift in Sources */,
 				7924EEAB1E0D3775009CBB85 /* PBSingleton.swift in Sources */,
 				796038671E1E32CA00D34CF7 /* PBUtility.swift in Sources */,
+				796038871E1F7EC000D34CF7 /* PBNWRequest.swift in Sources */,
 				796038831E1E747700D34CF7 /* PBGitIssueComment.swift in Sources */,
 				7924EEB61E0D3C98009CBB85 /* PBPOCListViewController.swift in Sources */,
 			);

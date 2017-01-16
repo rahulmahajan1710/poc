@@ -8,10 +8,15 @@
 
 import UIKit
 
+typealias PBNWManagerCompletionHandler = (_ result : Bool ,_ info : Data) -> Void
 
-class PBNetworkManager: NSObject {
+class PBNetworkManager {
 
-    //let dispatchQueue : DispatchQueue
+    private let nwDispatchQueue : DispatchQueue
+    
+    init() {
+        nwDispatchQueue = DispatchQueue(label: "com.pocbook.nwqueue", qos: DispatchQoS.utility)
+    }
     
     class var sharedInstance : PBNetworkManager {
         struct Singleton{
@@ -20,13 +25,11 @@ class PBNetworkManager: NSObject {
         return Singleton.instance
     }
     
-    
-    
-    
-    lazy var mURLSession = URLSession(configuration: URLSessionConfiguration.default)
-    
-    
-    
+    func send(request : PBNWRequest , completion : @escaping PBNWRequestCompletionHandler) -> Void {
+        nwDispatchQueue.async {
+            request.loadRequest(completion : completion)
+        }
+    }
     
     
 }

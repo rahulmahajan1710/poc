@@ -16,6 +16,21 @@ class PBGitIssuesListViewController: PBViewController, UITableViewDataSource, UI
     //MARK:- ViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 500
+        tableView.rowHeight = UITableViewAutomaticDimension
+        self.title = "Github Issues"
+        if PBSingleton.sharedInstance.GITIssues.count==0 {
+            PBSingleton.sharedInstance.getGITIssue(completion: { (result, error) in
+                DispatchQueue.main.async {
+                    if result == true {
+                        self.tableView.reloadData()
+                    }
+                    else{
+                        print("\(error!.localizedDescription)")
+                    }
+                }
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,20 +55,30 @@ class PBGitIssuesListViewController: PBViewController, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return PBSingleton.sharedInstance.GITIssues.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell =  tableView.dequeueReusableCell(withIdentifier: "PBGitIssuesTableViewCell") as? PBGitIssuesTableViewCell
         if cell == nil {
-            cell = PBGitIssuesTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "CellIdentifier")
+            cell = PBGitIssuesTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "PBGitIssuesTableViewCell")
         }
-        
+        let gitIssue = PBSingleton.sharedInstance.GITIssues[indexPath.row]
+        cell!.issueNameLbl.text = gitIssue.title
+        if gitIssue.body.characters.count>140 {
+            let strEndIndex = gitIssue.body.index(gitIssue.body.startIndex, offsetBy: 140)
+            cell!.issueDescLbl.text =  "\(gitIssue.body[gitIssue.body.startIndex...strEndIndex])..."
+        }
+        else{
+            cell!.issueDescLbl.text = gitIssue.body
+        }
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let commentsVC = storyboard!.instantiateViewController(withIdentifier: "PBGitIssuesCommentsViewController" ) as! PBGitIssuesCommentsViewController
+        commentsVC.issue = PBSingleton.sharedInstance.GITIssues[indexPath.row]
+        navigationController!.pushViewController(commentsVC, animated: true)
     }
 
 }

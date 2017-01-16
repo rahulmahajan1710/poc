@@ -12,8 +12,9 @@ class PBViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationController!.navigationBar.tintColor = UIColor.white
+        navigationController!.navigationBar.barTintColor = PBConstants.Colors.tealColor
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
 
     override func didReceiveMemoryWarning() {

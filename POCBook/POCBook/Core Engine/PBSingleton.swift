@@ -8,15 +8,18 @@
 
 import UIKit
 
+typealias PBCompletionHandler = (Bool , Any? , Error?) -> Void
+typealias PBViewControllerCompletionHandler = (Bool , Error?) ->Void
+
 class PBSingleton {
+    //MARK:- Private Properties
+    private let webServiceHelper = PBWebServiceHelper()
+    
+    //MARK:- Public Properties
     static let sharedInstance = PBSingleton()
-    
-    var pocList : Array<PBPoc>
-    
-    init() {
-        pocList = []
-    }
-    
+    var pocList = Array<PBPoc>()
+    var GITIssues = Array<PBGitIssue>()
+  
     
     //MARK: - Web Call & Data Reading Methods
 
@@ -47,7 +50,48 @@ class PBSingleton {
         }
     }
     
+    //MARK:-  GIT Issues POC Web calls
     
+    func getGITIssue(completion: @escaping PBViewControllerCompletionHandler) -> Void {
+        webServiceHelper.fetchAllGitIssues { (result, data, error) in
+            if result == true {
+                let jsonData = data as! Array<[String: Any]>
+                var temp = Array<PBGitIssue>()
+                for gitIssueInfo in jsonData {
+                    let issue = PBGitIssue(issueInfo: gitIssueInfo)
+                    temp.append(issue)
+                }
+                if temp.count>0 {
+                    self.GITIssues = temp.sorted{ $0.updateDate > $1.updateDate }
+                    completion(true, nil)
+                }
+                else{
+                    completion(false, error)
+                }
+            }
+        }
+    }
+    
+    func getCommentsOf(gitIssue : PBGitIssue , completion : @escaping PBViewControllerCompletionHandler) ->  Void{
+        webServiceHelper.fetchCommentsWith(url: gitIssue.commentsURL) { (result, data, error) in
+            if result == true {
+                let jsonData = data as! Array<[String: Any]>
+                var temp = Array<PBGitIssueComment>()
+                for gitCommentInfo in jsonData {
+                    let comment = PBGitIssueComment(commentInfo: gitCommentInfo)
+                    temp.append(comment)
+                }
+                if temp.count>0 {
+                    gitIssue.comments = temp
+                    completion(true, nil)
+                }
+                else{
+                    completion(false, error)
+                }
+            }
+
+        }
+    }
     
     
 }

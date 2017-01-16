@@ -8,20 +8,19 @@
 
 import UIKit
 
-struct PBGitIssue {
+class  PBGitIssue {
     let title : String
     let body : String
     let commentsURL : String
     let updateDate : Date
-    let comments : Array<PBGitIssueComment>?
+    var comments : Array<PBGitIssueComment>?
     
     
-    init(issueInfo : Dictionary<String, String>) {
-        title = issueInfo[PBConstants.GITIssues.title]!
-        body  = issueInfo[PBConstants.GITIssues.body]!
-        commentsURL = issueInfo[PBConstants.GITIssues.commentsURL]!
-        updateDate = PBGitIssue.dateFromString(dateStr: issueInfo[PBConstants.GITIssues.updatedAt]!)
-        comments = nil
+    init(issueInfo : Dictionary<String, Any>) {
+        title = issueInfo[PBConstants.GITIssues.title] as! String
+        body  = issueInfo[PBConstants.GITIssues.body] as! String
+        commentsURL = issueInfo[PBConstants.GITIssues.commentsURL] as! String
+        updateDate = PBGitIssue.dateFromString(dateStr: issueInfo[PBConstants.GITIssues.updatedAt] as! String)
     }
     
     static func dateFromString(dateStr : String) -> Date {

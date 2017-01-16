@@ -8,14 +8,14 @@
 
 import UIKit
 
-struct PBGitIssueComment {
+class PBGitIssueComment {
     let userName : String
     let body : String
     
     init(commentInfo : Dictionary<String,Any>) {
         body = commentInfo[PBConstants.GITIssues.body]! as! String
-        let userInfo = commentInfo[PBConstants.GITIssues.userName] as! Dictionary<String,String>
-        userName = userInfo[PBConstants.GITIssues.login]!
+        let userInfo = commentInfo[PBConstants.GITIssues.userName] as! Dictionary<String,Any>
+        userName = userInfo[PBConstants.GITIssues.login] as! String
     }
     
 }

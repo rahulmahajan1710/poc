@@ -18,11 +18,14 @@ struct PBConstants {
     
     struct KeyConstants {
         static let status                           = "STATUS"
+        static let error                            = "ERROR"
+        static let data                             = "DATA"
         static let success                          =  true
         static let failure                          =  false
         static let pocListName                      = "POC_LIST"
         static let pocName                          = "POC_NAME"
         static let pocStoryboard                    = "POC_STORYBOARD"
+        static let pocInfo                          = "POC_INFO"
     }
     
     struct Colors {
@@ -38,6 +41,8 @@ struct PBConstants {
     }
     
     struct GITIssues {
+        static let gitPocId                         = "1000"
+        static let gitIssuesURL                     = "https://api.github.com/repos/crashlytics/secureudid/issues"
         static let commentsURL                      = "comments_url"
         static let title                            = "title"
         static let body                             = "body"
@@ -45,6 +50,12 @@ struct PBConstants {
         static let dateFormat                       = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         static let userName                         = "user"
         static let login                            = "login"
+    }
+    
+    struct Network {
+        static let contentType                      = "Content-Type"
+        static let contentLength                    = "Content-Length"
+        static let responseHeaders                  = "HEADERS"
     }
 }
 
