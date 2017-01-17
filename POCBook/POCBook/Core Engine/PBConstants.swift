@@ -24,8 +24,7 @@ struct PBConstants {
         static let failure                          =  false
         static let pocListName                      = "POC_LIST"
         static let pocName                          = "POC_NAME"
-        static let pocStoryboard                    = "POC_STORYBOARD"
-        static let pocInfo                          = "POC_INFO"
+        static let pocDelegate                      = "POC_DELEGATE"
     }
     
     struct Colors {

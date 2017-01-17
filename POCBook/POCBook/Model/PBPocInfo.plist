@@ -7,18 +7,8 @@
 		<dict>
 			<key>POC_NAME</key>
 			<string>GIT Hub Issues</string>
-			<key>POC_STORYBOARD</key>
-			<string>GITHUB_ISSUES</string>
-			<key>POC_INFO</key>
-			<string></string>
-		</dict>
-		<dict>
-			<key>POC_NAME</key>
-			<string>Localization</string>
-			<key>POC_STORYBOARD</key>
-			<string>GITHUB_ISSUES</string>
-			<key>POC_INFO</key>
-			<string></string>
+			<key>POC_DELEGATE</key>
+			<string>POCBook.GHDelegate</string>
 		</dict>
 	</array>
 </dict>

@@ -12,14 +12,26 @@ typealias PBCompletionHandler = (Bool , Any? , Error?) -> Void
 typealias PBViewControllerCompletionHandler = (Bool , Error?) ->Void
 
 class PBSingleton {
+    
     //MARK:- Private Properties
-    private let webServiceHelper = PBWebServiceHelper()
+    private let webServiceHelper = PBWebServiceHelper.sharedInstance
+    
     
     //MARK:- Public Properties
     static let sharedInstance = PBSingleton()
     var pocList = Array<PBPoc>()
-    var GITIssues = Array<PBGitIssue>()
-  
+    var rootViewController : UIViewController?
+    
+    //MARK:- Loading POCs
+    func loadPOC( poc : PBPoc) -> Void {
+        let pocDelegateClass = NSClassFromString(poc.pocDelegateClass) as? PBPOCDelegate.Type
+        if let delegateClass = pocDelegateClass {
+            let rootVC = rootViewController as! UINavigationController
+            let pocObject = delegateClass.init()
+            rootVC.pushViewController(pocObject.pocRootViewController(), animated:true)
+        }
+    }
+    
     
     //MARK: - Web Call & Data Reading Methods
 
@@ -32,7 +44,7 @@ class PBSingleton {
                     let pocs = dict[PBConstants.KeyConstants.pocListName] as! Array<Any>
                     for poc in pocs {
                         let pocDict = poc as! Dictionary<String,String>
-                        let pocObj = PBPoc(pocName: pocDict[PBConstants.KeyConstants.pocName]!, storyboardName: pocDict[PBConstants.KeyConstants.pocStoryboard]!)
+                        let pocObj = PBPoc(pocInfo: pocDict)
                         tempPOC.append(pocObj)
                     }
                     
@@ -50,48 +62,7 @@ class PBSingleton {
         }
     }
     
-    //MARK:-  GIT Issues POC Web calls
-    
-    func getGITIssue(completion: @escaping PBViewControllerCompletionHandler) -> Void {
-        webServiceHelper.fetchAllGitIssues { (result, data, error) in
-            if result == true {
-                let jsonData = data as! Array<[String: Any]>
-                var temp = Array<PBGitIssue>()
-                for gitIssueInfo in jsonData {
-                    let issue = PBGitIssue(issueInfo: gitIssueInfo)
-                    temp.append(issue)
-                }
-                if temp.count>0 {
-                    self.GITIssues = temp.sorted{ $0.updateDate > $1.updateDate }
-                    completion(true, nil)
-                }
-                else{
-                    completion(false, error)
-                }
-            }
-        }
-    }
-    
-    func getCommentsOf(gitIssue : PBGitIssue , completion : @escaping PBViewControllerCompletionHandler) ->  Void{
-        webServiceHelper.fetchCommentsWith(url: gitIssue.commentsURL) { (result, data, error) in
-            if result == true {
-                let jsonData = data as! Array<[String: Any]>
-                var temp = Array<PBGitIssueComment>()
-                for gitCommentInfo in jsonData {
-                    let comment = PBGitIssueComment(commentInfo: gitCommentInfo)
-                    temp.append(comment)
-                }
-                if temp.count>0 {
-                    gitIssue.comments = temp
-                    completion(true, nil)
-                }
-                else{
-                    completion(false, error)
-                }
-            }
-
-        }
-    }
+  
     
     
 }

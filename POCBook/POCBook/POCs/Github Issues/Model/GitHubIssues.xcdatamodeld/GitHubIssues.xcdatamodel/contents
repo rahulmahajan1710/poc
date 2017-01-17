@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GITHubIssue" representedClassName="GITHubIssue" syncable="YES" codeGenerationType="class">
+        <attribute name="commentsURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="issueBody" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GITHubIssueComment" syncable="YES"/>
+    </entity>
+    <entity name="GITHubIssueComment" representedClassName="GITHubIssueComment" syncable="YES" codeGenerationType="class">
+        <attribute name="commentBody" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="GITHubIssue" positionX="-441" positionY="-117" width="128" height="118"/>
+        <element name="GITHubIssueComment" positionX="-245" positionY="15" width="128" height="75"/>
+    </elements>
+</model>

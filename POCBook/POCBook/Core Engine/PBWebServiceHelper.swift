@@ -9,6 +9,8 @@
 import UIKit
 
 class PBWebServiceHelper: NSObject {
+    
+    static let sharedInstance = PBWebServiceHelper()
 
     func fetchAllGitIssues(wsCompletion : @escaping PBCompletionHandler) -> Void {
         let nwRequest = PBNWRequest(url: PBConstants.GITIssues.gitIssuesURL, params: nil, tag: PBConstants.GITIssues.gitPocId, parseJson: true)

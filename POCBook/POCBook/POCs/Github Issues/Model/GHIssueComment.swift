@@ -1,14 +1,14 @@
 //
-//  PBGitIssueComment.swift
+//  GHIssueComment.swift
 //  POCBook
 //
-//  Created by rahul mahajan on 05/01/17.
+//  Created by rahul mahajan on 17/01/17.
 //  Copyright © 2017 rahul mahajan. All rights reserved.
 //
 
 import UIKit
 
-class PBGitIssueComment {
+class GHIssueComment: NSObject {
     let userName : String
     let body : String
     

@@ -1,26 +1,30 @@
 //
-//  PBGitIssuesListViewController.swift
+//  GHIssuesListViewController.swift
 //  POCBook
 //
-//  Created by rahul mahajan on 23/12/16.
-//  Copyright © 2016 rahul mahajan. All rights reserved.
+//  Created by rahul mahajan on 17/01/17.
+//  Copyright © 2017 rahul mahajan. All rights reserved.
 //
 
 import UIKit
 
-class PBGitIssuesListViewController: PBViewController, UITableViewDataSource, UITableViewDelegate{
+let kIssueListVC                = "Github Issues"
+let kIssueListCellIdentifier    = "GHIssuesTableViewCell"
+let kCommentsVCIdentifier       = "GHCommentsViewController"
+
+class GHIssuesListViewController: PBViewController, UITableViewDataSource, UITableViewDelegate{
     
     //MARK:- IB Outlets
     @IBOutlet weak var tableView: UITableView!
-
+    
     //MARK:- ViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 500
         tableView.rowHeight = UITableViewAutomaticDimension
-        self.title = "Github Issues"
-        if PBSingleton.sharedInstance.GITIssues.count==0 {
-            PBSingleton.sharedInstance.getGITIssue(completion: { (result, error) in
+        self.title = kIssueListVC
+        if GHSingleton.sharedInstance.issues.count==0 {
+            GHSingleton.sharedInstance.getGITIssue(completion: { (result, error) in
                 DispatchQueue.main.async {
                     if result == true {
                         self.tableView.reloadData()
@@ -32,21 +36,21 @@ class PBGitIssuesListViewController: PBViewController, UITableViewDataSource, UI
             })
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     //MARK: - UITableViewDataSource & UITableViewDelegate Methods
     
@@ -55,15 +59,15 @@ class PBGitIssuesListViewController: PBViewController, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PBSingleton.sharedInstance.GITIssues.count
+        return GHSingleton.sharedInstance.issues.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell =  tableView.dequeueReusableCell(withIdentifier: "PBGitIssuesTableViewCell") as? PBGitIssuesTableViewCell
+        var cell =  tableView.dequeueReusableCell(withIdentifier: kIssueListCellIdentifier) as? GHIssuesTableViewCell
         if cell == nil {
-            cell = PBGitIssuesTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "PBGitIssuesTableViewCell")
+            cell = GHIssuesTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: kIssueListCellIdentifier)
         }
-        let gitIssue = PBSingleton.sharedInstance.GITIssues[indexPath.row]
+        let gitIssue = GHSingleton.sharedInstance.issues[indexPath.row]
         cell!.issueNameLbl.text = gitIssue.title
         if gitIssue.body.characters.count>140 {
             let strEndIndex = gitIssue.body.index(gitIssue.body.startIndex, offsetBy: 140)
@@ -76,9 +80,10 @@ class PBGitIssuesListViewController: PBViewController, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let commentsVC = storyboard!.instantiateViewController(withIdentifier: "PBGitIssuesCommentsViewController" ) as! PBGitIssuesCommentsViewController
-        commentsVC.issue = PBSingleton.sharedInstance.GITIssues[indexPath.row]
+        let commentsVC = storyboard!.instantiateViewController(withIdentifier: kCommentsVCIdentifier ) as! GHCommentsViewController
+        commentsVC.issue = GHSingleton.sharedInstance.issues[indexPath.row]
         navigationController!.pushViewController(commentsVC, animated: true)
     }
-
+    
 }
+

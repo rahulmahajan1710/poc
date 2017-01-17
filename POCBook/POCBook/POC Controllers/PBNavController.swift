@@ -14,6 +14,7 @@ class PBNavController: UINavigationController {
         super.viewDidLoad()
         navigationBar.barTintColor = PBConstants.Colors.tealColor
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        PBSingleton.sharedInstance.rootViewController = self
     }
 
     override func didReceiveMemoryWarning() {

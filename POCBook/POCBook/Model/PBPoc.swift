@@ -9,11 +9,11 @@
 import Foundation
 
 class PBPoc {
-    var pocName : String
-    var storyboardName : String
-
-    init( pocName: String, storyboardName : String) {
-        self.pocName = pocName
-        self.storyboardName = storyboardName
+    let pocName           : String
+    let pocDelegateClass  : String
+    
+    init(pocInfo : Dictionary<String,String>) {
+        pocName = pocInfo[PBConstants.KeyConstants.pocName]!
+        pocDelegateClass = pocInfo[PBConstants.KeyConstants.pocDelegate]!
     }
 }

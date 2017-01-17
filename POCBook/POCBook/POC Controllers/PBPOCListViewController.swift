@@ -67,7 +67,7 @@ class PBPOCListViewController: PBViewController,UITableViewDataSource,UITableVie
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let poc = PBSingleton.sharedInstance.pocList[indexPath.row]
-        self.navigationController?.pushViewController(PBUtility.viewController(VCIdentifier: nil, SBIdentifier: poc.storyboardName), animated: true)
+        PBSingleton.sharedInstance.loadPOC(poc: poc)
     }
     
    
