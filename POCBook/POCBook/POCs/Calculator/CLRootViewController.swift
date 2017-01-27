@@ -46,7 +46,17 @@ class CLRootViewController: PBViewController {
         }
         userIsInTheMiddleOfTyping = true
     }
+    var savedProgram : CLCalculatorBrain.PropertyList?
+    @IBAction func save() {
+        savedProgram = brain.program
+    }
     
+    @IBAction func restore() {
+        if savedProgram != nil {
+            brain.program = savedProgram!
+            displayValue = brain.result
+        }
+    }
     
     @IBAction func performOperation(_ sender: UIButton) {
         
@@ -60,7 +70,7 @@ class CLRootViewController: PBViewController {
         }
         
         displayValue = brain.result
-        
+    
     }
     
     

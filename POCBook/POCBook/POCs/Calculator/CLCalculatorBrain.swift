@@ -10,7 +10,7 @@ import UIKit
 
 class CLCalculatorBrain {
     private var accumulator = 0.0
-    
+    private var internalProgram = [Any]()
     var result : Double {
         get{
             return accumulator
@@ -38,7 +38,42 @@ class CLCalculatorBrain {
     private var pending : PendingBinaryOperationInfo?
     
     
+    typealias PropertyList = Any
+    
+    var program : PropertyList {
+        set{
+            clear()
+            if let arrayOfOps = newValue as? [Any] {
+                for op in arrayOfOps {
+                    if let operand = op as? Double {
+                        print(operand)
+                        setOperand(operand: operand)
+                    }
+                    else if let operation = op as? String{
+                        print(operation)
+                        performOperation(symbol: operation)
+                    }
+                }
+            }
+        }
+        get{
+            return internalProgram
+        }
+    }
+    
+    private func clear(){
+        accumulator = 0.0
+        pending = nil
+        internalProgram.removeAll()
+    }
+    
+    func setOperand(operand :Double)  {
+        accumulator = operand
+        internalProgram.append(operand)
+    }
+    
     func performOperation(symbol : String) {
+        internalProgram.append(symbol)
         if let operation = operations[symbol] {
             switch  operation{
             case .Constant(let value):
@@ -61,8 +96,6 @@ class CLCalculatorBrain {
         }
     }
     
-    func setOperand(operand :Double)  {
-        accumulator = operand
-    }
+    
 
 }
