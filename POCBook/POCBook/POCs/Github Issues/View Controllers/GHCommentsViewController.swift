@@ -8,41 +8,37 @@
 
 import UIKit
 
-
-let kComments               =   "Comments"
-let kCommentsCellIdentifier =   "GHCommentsTableViewCell"
-    
 class GHCommentsViewController: PBViewController , UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet private weak var commentsTableView: UITableView!
-    private var comments = [GHIssueComment]()
+    private var comments = [GHIssueCommentMO]()
     
-    var issue : GHIssue!
+    var issue : GHIssueMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.title = kComments
+        self.title = GHConstants.kComments
         commentsTableView.estimatedRowHeight = 500
         commentsTableView.rowHeight = UITableViewAutomaticDimension
         
-        if let comments = issue.comments {
-            self.comments = comments
-            commentsTableView.reloadData()
-        }
-        else{
-            GHSingleton.sharedInstance.getCommentsOf(gitIssue: issue, completion: { (result, error) in
-                DispatchQueue.main.async {
-                    if result == true {
-                        self.comments = self.issue.comments!
-                        self.commentsTableView.reloadData()
-                    }
-                    else{
-                        print("\(error!.localizedDescription)")
-                    }
-                }
-            })
-        }
+//        if let comments = issue.comments {
+//            self.comments = comments
+//            commentsTableView.reloadData()
+//        }
+//        else{
+//            GHSingleton.sharedInstance.getCommentsOf(gitIssue: issue, completion: { (result, error) in
+//                DispatchQueue.main.async {
+//                    if result == true {
+//                        self.comments = self.issue.comments!
+//                        self.commentsTableView.reloadData()
+//                    }
+//                    else{
+//                        print("\(error!.localizedDescription)")
+//                    }
+//                }
+//            })
+//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,9 +58,9 @@ class GHCommentsViewController: PBViewController , UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell =  tableView.dequeueReusableCell(withIdentifier: kCommentsCellIdentifier) as? GHCommentsTableViewCell
+        var cell =  tableView.dequeueReusableCell(withIdentifier:GHConstants.kCommentsCellIdentifier) as? GHCommentsTableViewCell
         if cell == nil {
-            cell = GHCommentsTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: kCommentsCellIdentifier)
+            cell = GHCommentsTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: GHConstants.kCommentsCellIdentifier)
         }
         let comment = comments[indexPath.row]
         cell!.userNameLbl.text = comment.userName

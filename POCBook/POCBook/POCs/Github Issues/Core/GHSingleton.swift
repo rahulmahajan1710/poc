@@ -15,7 +15,10 @@ class GHSingleton: NSObject {
     
     //MARK:- Public Properties
     static let sharedInstance = GHSingleton()
-    var issues = Array<GHIssue>	()
+    
+    override init() {
+        
+    }
     
     //MARK:-  GIT Issues POC Web calls
     
@@ -23,13 +26,12 @@ class GHSingleton: NSObject {
         webServiceHelper.fetchAllGitIssues { (result, data, error) in
             if result == true {
                 let jsonData = data as! Array<[String: Any]>
-                var temp = Array<GHIssue>()
                 for gitIssueInfo in jsonData {
-                    let issue = GHIssue(issueInfo: gitIssueInfo)
-                    temp.append(issue)
+                    let ghIssue = GHCoreDataController.sharedInstance.insertEntityWith(name: GHConstants.kIssueEntity) as! GHIssueMO
+                    ghIssue.setUpAttributes(with: gitIssueInfo)
                 }
-                if temp.count>0 {
-                    self.issues = temp.sorted{ $0.updateDate > $1.updateDate }
+                if jsonData.count>0 {
+                    GHCoreDataController.sharedInstance.saveChanges()
                     completion(true, nil)
                 }
                 else{
@@ -39,17 +41,17 @@ class GHSingleton: NSObject {
         }
     }
     
-    func getCommentsOf(gitIssue : GHIssue , completion : @escaping PBViewControllerCompletionHandler) ->  Void{
-        webServiceHelper.fetchCommentsWith(url: gitIssue.commentsURL) { (result, data, error) in
+    func getCommentsOf(gitIssue : GHIssueMO , completion : @escaping PBViewControllerCompletionHandler) ->  Void{
+        webServiceHelper.fetchCommentsWith(url: gitIssue.commentsURL!) { (result, data, error) in
             if result == true {
                 let jsonData = data as! Array<[String: Any]>
-                var temp = Array<GHIssueComment>()
-                for gitCommentInfo in jsonData {
-                    let comment = GHIssueComment(commentInfo: gitCommentInfo)
-                    temp.append(comment)
-                }
+                var temp = Array<GHIssueCommentMO>()
+//                for gitCommentInfo in jsonData {
+//                    let comment = GHIssueComment(commentInfo: gitCommentInfo)
+//                    temp.append(comment)
+//                }
                 if temp.count>0 {
-                    gitIssue.comments = temp
+                    //gitIssue.comments = temp
                     completion(true, nil)
                 }
                 else{

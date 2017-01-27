@@ -10,6 +10,12 @@
 			<key>POC_DELEGATE</key>
 			<string>POCBook.GHDelegate</string>
 		</dict>
+		<dict>
+			<key>POC_NAME</key>
+			<string>Calculator</string>
+			<key>POC_DELEGATE</key>
+			<string>POCBook.CLDelegate</string>
+		</dict>
 	</array>
 </dict>
 </plist>

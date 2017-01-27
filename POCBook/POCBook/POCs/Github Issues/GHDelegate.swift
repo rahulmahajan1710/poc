@@ -13,7 +13,7 @@ let kGHStoryboardName = "GITHUB_ISSUES"
 class GHDelegate: PBPOCDelegate {
     
     required init() {
-        
+       _ = GHCoreDataController.sharedInstance
     }
     
     func pocRootViewController() -> UIViewController {
