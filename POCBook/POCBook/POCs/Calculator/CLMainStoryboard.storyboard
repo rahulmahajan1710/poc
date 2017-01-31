@@ -139,7 +139,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="78.5" height="134.5"/>
                                                         <color key="backgroundColor" red="0.078277491470000002" green="0.72336632010000002" blue="0.1235718504" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                                        <state key="normal" title="√">
+                                                        <state key="normal" title="Z">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>

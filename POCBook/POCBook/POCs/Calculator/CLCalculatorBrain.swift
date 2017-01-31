@@ -17,6 +17,10 @@ class CLCalculatorBrain {
         }
     }
     
+    func addUnaryOperation(symbol : String , operation : @escaping (Double)-> Double){
+        operations[symbol] = Operation.UnaryOperation(operation)
+    }
+    
     private var operations = [ "π" : Operation.Constant(M_PI),
                                "√" : Operation.UnaryOperation(sqrt),
                                "=" : Operation.Equals,

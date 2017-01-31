@@ -16,6 +16,12 @@
 			<key>POC_DELEGATE</key>
 			<string>POCBook.CLDelegate</string>
 		</dict>
+		<dict>
+			<key>POC_NAME</key>
+			<string>MVVM</string>
+			<key>POC_DELEGATE</key>
+			<string>POCBook.MVMDelegate</string>
+		</dict>
 	</array>
 </dict>
 </plist>

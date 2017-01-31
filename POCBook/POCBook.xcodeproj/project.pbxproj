@@ -38,6 +38,12 @@
 		7924EEB61E0D3C98009CBB85 /* PBPOCListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924EEB31E0D3C98009CBB85 /* PBPOCListViewController.swift */; };
 		7924EEB71E0D3C98009CBB85 /* PBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924EEB41E0D3C98009CBB85 /* PBViewController.swift */; };
 		7924EEBB1E0D3DA6009CBB85 /* PBPOCListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924EEBA1E0D3DA6009CBB85 /* PBPOCListTableViewCell.swift */; };
+		795DE31D1E3F34DD002D7182 /* MVMMainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795DE31C1E3F34DD002D7182 /* MVMMainStoryboard.storyboard */; };
+		795DE3201E3F35D3002D7182 /* MVMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE31F1E3F35D3002D7182 /* MVMConstants.swift */; };
+		795DE3221E3F3640002D7182 /* MVMDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE3211E3F3640002D7182 /* MVMDelegate.swift */; };
+		795DE3251E3F37DD002D7182 /* MVMRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE3241E3F37DD002D7182 /* MVMRootViewController.swift */; };
+		795DE32A1E3F7191002D7182 /* MVMFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE3291E3F7191002D7182 /* MVMFaceView.swift */; };
+		795DE32C1E3F71BC002D7182 /* MVMFacialExpressions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE32B1E3F71BC002D7182 /* MVMFacialExpressions.swift */; };
 		796038751E1E5C6100D34CF7 /* GITHUB_ISSUES.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796038701E1E5C6100D34CF7 /* GITHUB_ISSUES.storyboard */; };
 		796038761E1E5C6100D34CF7 /* GITHUB_ISSUES.txt in Resources */ = {isa = PBXBuildFile; fileRef = 796038711E1E5C6100D34CF7 /* GITHUB_ISSUES.txt */; };
 		796038851E1E78BB00D34CF7 /* PBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796038841E1E78BB00D34CF7 /* PBNetworkManager.swift */; };
@@ -104,6 +110,12 @@
 		7924EEB31E0D3C98009CBB85 /* PBPOCListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBPOCListViewController.swift; sourceTree = "<group>"; };
 		7924EEB41E0D3C98009CBB85 /* PBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBViewController.swift; sourceTree = "<group>"; };
 		7924EEBA1E0D3DA6009CBB85 /* PBPOCListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBPOCListTableViewCell.swift; sourceTree = "<group>"; };
+		795DE31C1E3F34DD002D7182 /* MVMMainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MVMMainStoryboard.storyboard; sourceTree = "<group>"; };
+		795DE31F1E3F35D3002D7182 /* MVMConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVMConstants.swift; sourceTree = "<group>"; };
+		795DE3211E3F3640002D7182 /* MVMDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVMDelegate.swift; sourceTree = "<group>"; };
+		795DE3241E3F37DD002D7182 /* MVMRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVMRootViewController.swift; sourceTree = "<group>"; };
+		795DE3291E3F7191002D7182 /* MVMFaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVMFaceView.swift; sourceTree = "<group>"; };
+		795DE32B1E3F71BC002D7182 /* MVMFacialExpressions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVMFacialExpressions.swift; sourceTree = "<group>"; };
 		796038701E1E5C6100D34CF7 /* GITHUB_ISSUES.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GITHUB_ISSUES.storyboard; sourceTree = "<group>"; };
 		796038711E1E5C6100D34CF7 /* GITHUB_ISSUES.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GITHUB_ISSUES.txt; sourceTree = "<group>"; };
 		796038841E1E78BB00D34CF7 /* PBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBNetworkManager.swift; sourceTree = "<group>"; };
@@ -247,11 +259,57 @@
 			path = "POC Controllers";
 			sourceTree = "<group>";
 		};
+		795DE3151E3F33EF002D7182 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				795DE3281E3F7179002D7182 /* Views */,
+				795DE3271E3F3824002D7182 /* ViewModels */,
+				795DE3231E3F37C2002D7182 /* ViewControllers */,
+				795DE31E1E3F35B7002D7182 /* Core */,
+				795DE3211E3F3640002D7182 /* MVMDelegate.swift */,
+				795DE31C1E3F34DD002D7182 /* MVMMainStoryboard.storyboard */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		795DE31E1E3F35B7002D7182 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				795DE31F1E3F35D3002D7182 /* MVMConstants.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		795DE3231E3F37C2002D7182 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				795DE3241E3F37DD002D7182 /* MVMRootViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		795DE3271E3F3824002D7182 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				795DE32B1E3F71BC002D7182 /* MVMFacialExpressions.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		795DE3281E3F7179002D7182 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				795DE3291E3F7191002D7182 /* MVMFaceView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7960386E1E1E5C4800D34CF7 /* POCs */ = {
 			isa = PBXGroup;
 			children = (
 				79ABC58C1E3B41660099C615 /* Calculator */,
 				7960386F1E1E5C6100D34CF7 /* Github Issues */,
+				795DE3151E3F33EF002D7182 /* MVVM */,
 			);
 			path = POCs;
 			sourceTree = "<group>";
@@ -429,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79ABC5901E3B41BB0099C615 /* CLMainStoryboard.storyboard in Resources */,
+				795DE31D1E3F34DD002D7182 /* MVMMainStoryboard.storyboard in Resources */,
 				7924EEA41E0D35B3009CBB85 /* Main.storyboard in Resources */,
 				7924EEAD1E0D3864009CBB85 /* PBPocInfo.plist in Resources */,
 				7924EE6E1E0D2B06009CBB85 /* Assets.xcassets in Resources */,
@@ -471,7 +530,9 @@
 				79ABC5961E3B50AD0099C615 /* CLCalculatorBrain.swift in Sources */,
 				79225DA01E2E36E600A70730 /* GHSingleton.swift in Sources */,
 				79225DA61E2E389700A70730 /* PBUtility.swift in Sources */,
+				795DE32A1E3F7191002D7182 /* MVMFaceView.swift in Sources */,
 				79028F921E2F68C400A5BDCF /* GHConstants.swift in Sources */,
+				795DE3251E3F37DD002D7182 /* MVMRootViewController.swift in Sources */,
 				79ABC5921E3B42570099C615 /* CLRootViewController.swift in Sources */,
 				79225D921E2E12DC00A70730 /* GHIssuesTableViewCell.swift in Sources */,
 				79ABC58E1E3B419A0099C615 /* CLDelegate.swift in Sources */,
@@ -482,8 +543,11 @@
 				7924EE9E1E0D357E009CBB85 /* PBPoc.swift in Sources */,
 				790708571E24F9EF00EF4279 /* PBWebServiceHelper.swift in Sources */,
 				79225DA41E2E389700A70730 /* PBConstants.swift in Sources */,
+				795DE3221E3F3640002D7182 /* MVMDelegate.swift in Sources */,
 				79028F8E1E2F491E00A5BDCF /* GHIssueMO+CoreDataProperties.swift in Sources */,
 				7924EEB51E0D3C98009CBB85 /* PBNavController.swift in Sources */,
+				795DE32C1E3F71BC002D7182 /* MVMFacialExpressions.swift in Sources */,
+				795DE3201E3F35D3002D7182 /* MVMConstants.swift in Sources */,
 				7924EEAB1E0D3775009CBB85 /* PBSingleton.swift in Sources */,
 				796038871E1F7EC000D34CF7 /* PBNWRequest.swift in Sources */,
 				79028F8D1E2F491E00A5BDCF /* GHIssueMO+CoreDataClass.swift in Sources */,

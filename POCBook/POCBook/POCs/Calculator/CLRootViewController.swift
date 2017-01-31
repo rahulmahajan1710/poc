@@ -8,6 +8,8 @@
 
 import UIKit
 
+var count = 0
+
 class CLRootViewController: PBViewController {
 
     @IBOutlet private weak var displayLbl: UILabel!
@@ -27,6 +29,17 @@ class CLRootViewController: PBViewController {
         super.viewDidLoad()
         title = "Calculator Demo"
         // Do any additional setup after loading the view.
+        count += 1
+        print("VDL Count: \(count)")
+        brain.addUnaryOperation(symbol: "Z"){[weak weakSelf = self ] in
+            weakSelf?.displayLbl.textColor = UIColor.red
+            return sqrt($0)
+        }
+    }
+    
+    deinit {
+        count -= 1
+        print("Left Count: \(count)")
     }
 
     override func didReceiveMemoryWarning() {
